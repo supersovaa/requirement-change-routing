@@ -1,32 +1,24 @@
 ---
 name: requirement-change-routing
-description: Identify unresolved requirement decisions during any work phase and route them to the responsible grilling workflow before dependent changes proceed.
+description: Route unsettled requirement or constraint decisions to the owning clarification workflow when they arise during any kind of work.
 ---
 
 # Requirement Change Routing
 
-Use this skill whenever a task creates or revises requirements or constraints, or exposes a requirement decision during design, planning, implementation, testing, review, or other work.
+Use this skill when creating or revising requirements or constraints, including when another work phase would introduce a new guarantee.
 
 This skill targets a single-user AI-agent workflow.
 
-## Identify the decision
+## During existing work
 
-Compare the user's current instructions and effective decisions with the relevant requirements and design canon.
-Use code, tests, and other implementation artifacts as evidence of current behavior; use the canon and user decisions to establish required behavior.
+Use the user's effective decisions and the relevant requirements/design canon already available to the owning work. Focus on the affected requirements when a new or revised obligation is about to be adopted; reuse existing source checks.
 
-Identify decisions that remain unsettled about the requested change and its relevant existing requirements.
-When a relevant existing requirement may have originated from an unsupported assistant assumption, route the decision to retain, revise, or remove it to the user.
-Treat every assistant-proposed new requirement or constraint as a user decision to settle through grilling before adding it to the canon, plan, implementation contract, or acceptance criteria.
+Treat code and tests as evidence of current behavior rather than authority for additional requirements. Route every assistant-proposed new requirement or constraint for a user decision through grilling. If a relevant existing requirement may rest on an unsupported assistant assumption, route its retention, revision, or removal for user judgment.
 
-## Route and continue
+Proceed directly when the required behavior is already settled. Otherwise, pass the specific unresolved choice and its available evidence to the owning requirements/design clarification workflow; use `grill-into-pr` when applicable. Reuse decisions already made and the owning workflow's questions, documents, and PRs.
 
-When the required behavior is already determined by the user's instructions and the canon, proceed with the owning work.
-When a user decision remains, route it to the workflow that owns requirements or design clarification. Use `grill-into-pr` for GitHub-based requirements/design changes when that workflow applies; use the established owning workflow otherwise.
-Give that workflow the affected requirement, the available authoritative evidence, and the specific unresolved decision. Reuse decisions already settled; let the owning workflow manage question format, documentation, and PRs.
-Hold only work dependent on the unsettled decision. Continue work whose correctness is independent of that decision.
-Resume affected work from the settled requirements and design through its normal work-phase skill.
+Continue independent work while the affected work awaits a decision. Resume the affected work from the settled requirements/design through its normal skill.
 
 ## Responsibility
 
-This skill owns detecting unsettled requirement changes and routing their decisions.
-The clarification workflow owns grilling and the authoritative requirements/design updates; implementation, planning, testing, and review retain their existing owners.
+This skill owns the routing decision within existing work. The owning workflow performs clarification and maintains the canon; this skill adds no separate approval stage, recurring repository scan, or tracking artifact.
