@@ -7,6 +7,8 @@ description: Identify unresolved requirement decisions during any work phase and
 
 Use this skill whenever a task creates or revises requirements or constraints, or exposes a requirement decision during design, planning, implementation, testing, review, or other work.
 
+This skill targets a single-user AI-agent workflow.
+
 ## Identify the decision
 
 Compare the user's current instructions and effective decisions with the relevant requirements and design canon.
