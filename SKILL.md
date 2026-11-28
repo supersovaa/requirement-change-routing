@@ -1,13 +1,11 @@
 ---
 name: requirement-change-routing
-description: Decide whether work can proceed under settled requirements and design or needs a user decision through the owning clarification workflow.
+description: Use during work governed by requirements or design, including planning, implementation, and review. Handle questions about what behavior the user requires.
 ---
 
 # Requirement Change Routing
 
-Use this skill when deciding whether to ask the user for a requirements/design decision during any kind of work, including creating or revising requirements or constraints and proposing new guarantees.
-
-This skill targets a single-user AI-agent workflow.
+In this single-user AI-agent workflow, use the existing decisions and canon when a requirement, constraint, or guarantee comes into question during any kind of work. Route a remaining user decision through its owning clarification workflow.
 
 ## During existing work
 

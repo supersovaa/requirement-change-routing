@@ -4,7 +4,7 @@ A lightweight skill for distinguishing work governed by settled requirements and
 
 ## When to use
 
-Use it when deciding whether to ask the user for a requirements/design decision during any kind of work, including creating or revising requirements or constraints and proposing new guarantees.
+Use it during requirements, design, planning, implementation, or review. If work raises a question about required behavior, check the settled decisions before asking the user.
 
 Apply it **within the current work**, reusing the relevant decisions, source checks, questions, documents, and PRs.
 
